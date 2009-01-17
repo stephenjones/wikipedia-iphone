@@ -1,0 +1,143 @@
+K 25
+svn:wc:ra_dav:version-url
+V 24
+/svn/!svn/ver/21/trunk/c
+END
+indexer.c
+K 25
+svn:wc:ra_dav:version-url
+V 33
+/svn/!svn/ver/2/trunk/c/indexer.c
+END
+search.c
+K 25
+svn:wc:ra_dav:version-url
+V 32
+/svn/!svn/ver/2/trunk/c/search.c
+END
+bootstrap.sh
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/svn/!svn/ver/2/trunk/c/bootstrap.sh
+END
+lsearcher.c
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/svn/!svn/ver/18/trunk/c/lsearcher.c
+END
+search.h
+K 25
+svn:wc:ra_dav:version-url
+V 32
+/svn/!svn/ver/2/trunk/c/search.h
+END
+locate.h
+K 25
+svn:wc:ra_dav:version-url
+V 33
+/svn/!svn/ver/10/trunk/c/locate.h
+END
+lbigram.c
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/svn/!svn/ver/10/trunk/c/lbigram.c
+END
+blocks.c
+K 25
+svn:wc:ra_dav:version-url
+V 33
+/svn/!svn/ver/21/trunk/c/blocks.c
+END
+lsearcher.h
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/svn/!svn/ver/2/trunk/c/lsearcher.h
+END
+safe.c
+K 25
+svn:wc:ra_dav:version-url
+V 30
+/svn/!svn/ver/2/trunk/c/safe.c
+END
+process.c
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/svn/!svn/ver/10/trunk/c/process.c
+END
+configure.ac
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/svn/!svn/ver/2/trunk/c/configure.ac
+END
+safe.h
+K 25
+svn:wc:ra_dav:version-url
+V 30
+/svn/!svn/ver/2/trunk/c/safe.h
+END
+livesearch.c
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/svn/!svn/ver/2/trunk/c/livesearch.c
+END
+lcode.c
+K 25
+svn:wc:ra_dav:version-url
+V 32
+/svn/!svn/ver/10/trunk/c/lcode.c
+END
+wp.c
+K 25
+svn:wc:ra_dav:version-url
+V 29
+/svn/!svn/ver/11/trunk/c/wp.c
+END
+bzipreader.c
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/svn/!svn/ver/2/trunk/c/bzipreader.c
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/svn/!svn/ver/10/trunk/c/Makefile.am
+END
+ternary.h
+K 25
+svn:wc:ra_dav:version-url
+V 33
+/svn/!svn/ver/2/trunk/c/ternary.h
+END
+debug.h
+K 25
+svn:wc:ra_dav:version-url
+V 31
+/svn/!svn/ver/2/trunk/c/debug.h
+END
+wp.h
+K 25
+svn:wc:ra_dav:version-url
+V 28
+/svn/!svn/ver/2/trunk/c/wp.h
+END
+bzipreader.h
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/!svn/ver/20/trunk/c/bzipreader.h
+END
+searcher.c
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/svn/!svn/ver/2/trunk/c/searcher.c
+END

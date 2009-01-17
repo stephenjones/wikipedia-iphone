@@ -1,0 +1,3 @@
+#!/bin/sh
+
+../c/livesearch $1.processed $1.locate.db $1.locate.prefixdb $1.blocks.db

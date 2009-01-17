@@ -1,0 +1,51 @@
+#!/bin/zsh
+
+if [ ! -n "$1" ]; then
+  echo "process <file>"
+  exit -1
+else
+  file=$1
+fi
+
+ofile="$file.processed"
+if [ ! -e $ofile ]; then
+  echo "Creating processed version of $file..."
+  bzcat $file | ../c/process | bzip2 > $ofile
+else
+  echo "$ofile already exists"
+fi
+
+ifile="$file.index.txt"
+if [ ! -e $ifile ]; then
+  echo "Creating index..."
+  ruby ../rb/index.rb $ofile > $ifile
+else
+  echo "$ifile already exists"
+fi
+
+sfile="$file.locate.db"
+if [ ! -e $sfile ]; then
+  echo "Creating locate index..."
+  cat $ifile | LC_ALL=C sort -u > $ifile.sorted
+  ../c/lbigram < $ifile.sorted | sort -nr |
+    perl -ne '/^\s*[0-9]+\s(..)$/ && print $1' > $ifile.bigrams
+  ../c/lcode $ifile.bigrams < $ifile.sorted > $sfile
+else
+  echo "$sfile already exists"
+fi
+
+spfile="$file.locate.prefixdb"
+if [ ! -e $spfile ]; then
+  echo "Creating locate prefix index..."
+  ../c/lsearcher -f $sfile -c $spfile -n
+else
+  echo "$spfile already exists"
+fi
+
+bfile="$file.blocks.db"
+if [ ! -e $bfile ]; then
+  echo "Creating block index"
+  ../c/bzipreader -f $ofile -l | awk '{print $2;}' | ../c/blocks $bfile
+else
+  echo "$bfile already exists"
+fi

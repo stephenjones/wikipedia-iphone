@@ -1,0 +1,30 @@
+#!/bin/zsh
+
+file="../ga.wp.txt.bz2"
+bz="../c/bzipreader -f $file"
+pfile="../gawiki-latest-pages-articles.xml.bz2.processed"
+
+pushd ../c; make clean; make; popd
+
+function fail() {
+ echo "FAIL:" $* >/dev/stdout
+ exit -1
+}
+
+if ! (eval "$bz -x -n 1 2>/dev/null" | grep -q Daoine); then
+  fail decompression 
+fi
+
+if ! (eval "$bz -x -b 0" | grep -q Esperanto); then
+  fail decompression with 0 offset
+fi
+
+last=`eval "$bz -l | tail -1 | awk '{print \\$2;}'"`
+if ! (eval "$bz -x -b $last" | grep -q Nikon); then
+  fail decompression with $last offset
+fi
+
+mv $pfile ../ga.tmp
+rm ../gawiki-*
+mv ../ga.tmp $pfile
+../sh/process `echo "$pfile" | sed -E 's/\.proc.+//'`

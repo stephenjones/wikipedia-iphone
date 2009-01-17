@@ -1,0 +1,6 @@
+''foo''
+'''foo'''
+'''foo's'''
+''foo's''
+'''foo''bar's''baz'''
+'''[[foo|bar]]'''

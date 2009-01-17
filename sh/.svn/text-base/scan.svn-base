@@ -1,0 +1,28 @@
+#!/bin/zsh
+# print bz2 debug info for given file in roundabout fashion
+
+file=$1
+ftmp="/tmp/$$.tmp"
+otmp="/tmp/$$.o.tmp"
+
+if [ ! -n "$1" ]; then
+  echo "scan <file>" >/dev/stdout
+  exit -1
+fi
+
+if [ -n "$2" ]; then
+  arg=$2
+else
+  arg="2>/dev/null"
+fi
+
+../c/bzipreader -f $file -l > $ftmp
+
+I=-1; while [ $((I++)) -lt 10 ];      
+do
+  offset=`cat $ftmp | grep -E "^$I" | awk '{print $2;}'`
+  echo -n "$I\t$offset\t"
+  eval "../c/bzipreader -f $file -n $I -x $arg > $otmp"
+  cat $otmp | head | tr "\n" "\\" | head -c 30
+  echo "" `cat $otmp | wc -c`
+done

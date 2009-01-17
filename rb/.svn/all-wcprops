@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 25
+/svn/!svn/ver/19/trunk/rb
+END
+xmlprocess.rb
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/!svn/ver/2/trunk/rb/xmlprocess.rb
+END
+article.rb
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/svn/!svn/ver/2/trunk/rb/article.rb
+END
+titles.rb
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/svn/!svn/ver/2/trunk/rb/titles.rb
+END
+xapian-index.rb
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/2/trunk/rb/xapian-index.rb
+END
+livesearch.rb
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/!svn/ver/2/trunk/rb/livesearch.rb
+END
+server.rb
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/svn/!svn/ver/10/trunk/rb/server.rb
+END
+bzipreader.rb
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/19/trunk/rb/bzipreader.rb
+END
+index.rb
+K 25
+svn:wc:ra_dav:version-url
+V 33
+/svn/!svn/ver/2/trunk/rb/index.rb
+END
+common.rb
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/svn/!svn/ver/2/trunk/rb/common.rb
+END

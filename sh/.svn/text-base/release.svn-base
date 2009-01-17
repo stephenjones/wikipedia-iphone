@@ -1,0 +1,21 @@
+#!/bin/zsh
+
+dir=`dirname $0`/..
+bundle=$dir/Wikipedia.app
+version=$1
+release=$dir/release
+
+if [ ! $version ]; then
+  echo "Usage: $0 <version>"
+  exit -1
+fi
+
+if [ ! -d $release ]; then
+  mkdir $release
+fi
+
+cd $dir/app
+make
+cd ..
+cp app/WikiApp $bundle/Wikipedia
+zip -r $release/Wikipedia-$version.zip $bundle

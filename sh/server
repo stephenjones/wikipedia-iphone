@@ -1,0 +1,3 @@
+#!/bin/sh
+
+ruby -r ../rb/server.rb -e 'WPServer.start_on(9090)' -- $1

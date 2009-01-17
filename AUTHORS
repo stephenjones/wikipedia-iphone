@@ -1,0 +1,5 @@
+Patrick Collison <patrick@collison.ie>: design and implementation
+
+Josef Weidendorfer <Josef.Weidendorfer@gmx.de>: parser improvements (unicode, lists, tables)
+
+Some code from bzip2 and the FreeBSD implementation of locate has been used; more details are provided in README

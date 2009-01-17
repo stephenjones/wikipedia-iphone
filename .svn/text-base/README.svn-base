@@ -1,0 +1,61 @@
+This is all one huge hack, with lots of debug code and hacks left in place.
+
+==Get started==
+
+cd c
+./configure
+make
+cd ..
+
+Get a Wikipedia XML dump (e.g. enwiki-20071018-pages-articles.xml.bz2), and 
+place it in root (wp) directory.
+
+cd sh
+./process ../<dump>
+cd ..
+
+The processing stage will take several hours (8 on 2.16GHz MBP). (If someone
+wants to speed it up, implement xmlprocess.rb in C.) Once this is done, you
+can delete the original dump. If you get sick of waiting, use a dump of
+the Simple English Wikipedia, which is several orders of magnitude smaller
+than the standard English dumps.
+
+When done:
+
+To run curses-based livesearch:
+cd sh
+./livesearch ../<dump>
+
+To run webserver:
+cd rb
+ruby -r server.rb -e 'WPServer.start_on(9000)' -- ../<dump>
+
+(Note that even though the above commands use the filename of the original dump,
+they don't actually depend on the file; just the processed versions created by
+sh/process)
+
+==Directory layout==
+
+rb/
+ bzipreader.rb (ruby interface to c/bzipreader.c; supports streaming bz2 files)
+ index.rb (generate an article-to-block index using bzipreader.rb)
+ server.rb (Mongrel-based server for using WP dumps with a web browser)
+ xmlprocess.rb (generate stripped, XML-less file from a vanilla WP dump)
+
+c/
+ bzipreader (locate, extract and decompress arbitrary blocks of bz2 files; sometimes
+             quite useful for purposes unrelated to this project)
+ lsearcher (use locate(1) search databases in interesting ways)
+ searcher (search a ternary search tree built with indexer)
+ indexer (generate a ternary search tree)
+ livesearch (use a curses-based interface to browse Wikipedia dumps)
+
+sh/
+ test (run outdated tests)
+ process (take a vanilla Wikipedia dump and create all the necessary support files)
+
+app/
+ the iPhone application itself
+
+c/bzipreader.c is based on bzip2recover.c, part of the bzip2 distribution.
+c/lsearcher.c is based on fastfind.c, part of the FreeBSD implementation of locate(1).
